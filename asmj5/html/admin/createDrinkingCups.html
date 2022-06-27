@@ -1,0 +1,139 @@
+<div class="container-fluid">
+    <form name="update_DrinkingCups">
+        <div class="row px-xl-5">
+            <div class="col-lg-9">
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Quản lí
+                        sản
+                        phẩm</span></h5>
+                <div class="bg-light p-30 mb-5">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label>Tên cốc</label>
+                            <input ng-model="from.name" class="form-control" type="text" placeholder="John">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Giá cốc</label>
+                            <input ng-model="from.price" class="form-control" type="text" placeholder="Doe">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Khuyến mãi</label>
+                            <input ng-model="from.promotion" class="form-control" type="text"
+                                placeholder="example@email.com">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <div class="d-flex mb-4">
+                                <strong class="text-dark mr-3">Màu sắc</strong>
+
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" ng-model="from.color" value="Black" class="custom-control-input"
+                                        id="color-1" name="color">
+                                    <label class="custom-control-label" for="color-1">Black</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" ng-model="from.color" value="White" class="custom-control-input"
+                                        id="color-2" name="color">
+                                    <label class="custom-control-label" for="color-2">White</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" ng-model="from.color" value="Red" class="custom-control-input"
+                                        id="color-3" name="color">
+                                    <label class="custom-control-label" for="color-3">Red</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" ng-model="from.color" value="Blue" class="custom-control-input"
+                                        id="color-4" name="color">
+                                    <label class="custom-control-label" for="color-4">Blue</label>
+
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" ng-model="from.color" value="Green"
+                                            class="custom-control-input" id="color-5" name="color">
+                                        <label class="custom-control-label" for="color-5">Green</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="d-flex mb-3">
+                                <strong class="text-dark mr-3">Sizes:</strong>
+
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" ng-model="from.size" class="custom-control-input" value="XS"
+                                        id="size-1" name="size">
+                                    <label class="custom-control-label" for="size-1">XS</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" ng-model="from.size" value="S" class="custom-control-input"
+                                        id="size-2" name="size">
+                                    <label class="custom-control-label" for="size-2">S</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" ng-model="from.size" value="M" class="custom-control-input"
+                                        id="size-3" name="size">
+                                    <label class="custom-control-label" for="size-3">M</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" ng-model="from.size" value="L" class="custom-control-input"
+                                        id="size-4" name="size">
+                                    <label class="custom-control-label" for="size-4">L</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" ng-model="from.size" value="XL" class="custom-control-input"
+                                        id="size-5" name="size">
+                                    <label class="custom-control-label" for="size-5">XL</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Dung tích</label>
+                            <input ng-model="from.volume" class="form-control" type="text" placeholder="123 Street">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Chất liệu</label>
+                            <input ng-model="from.material" class="form-control" type="text" placeholder="123 Street">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Loại Cốc</label>
+                            <select class="form-select" ng-model="from.idCategory">
+                                <option ng-repeat="cate in categories" ng-value="{{cate.id}}">{{cate.name}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Trạng thái</label>
+                            <select class="form-select" ng-model="from.status">
+                                <option  ng-value="1">Còn hàng</option>
+                                <option  ng-value="0">Hết hàng</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <label>Thể tích</label>
+                            <input ng-model="from.volume" class="form-control" type="text" placeholder="New York">
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <label>Img</label>
+                            <input  enctype="multipart/form-data" accept="img/*" class="form-control" type="file"
+                                onchange="angular.element(this).scope().imageChanged(this.files)" id="img" placeholder="img">
+                        </div>
+                     
+                        <!-- onchange="loadFile(event)"  -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3" style="margin-top: 40px;">
+                <div class="bg-light p-30 mb-5">
+                    <div class="row">
+                        <img class="m-auto" src="../../../asmj5/asset/img/" width="220px" ng-src="{{'../../asset/img/'+ from.img}}" id="output"
+                            alt="">
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12 form-group">
+                <button ng-click="updateDrinkingCups()" type="submit" class="btn btn-primary ">Submit</button>
+                <button ng-click="cancel()" type="submit" class="btn btn-primary ">Hủy</button>
+            </div>
+
+        </div>
+    </form>
+</div>

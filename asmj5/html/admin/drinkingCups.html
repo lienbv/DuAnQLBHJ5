@@ -1,0 +1,58 @@
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">Quản lí sản phẩm</h1>
+      <div class="btn-toolbar mb-2 ml-auto mb-md-0">
+        <div class="btn-group mr-2">
+          <a href="#!" type="button" class="btn btn-sm btn-outline-secondary">Thêm sản phẩm</a>
+        </div>
+      </div>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group mr-2">
+
+        </div>
+
+      </div>
+    </div>
+  
+
+    <!-- <h2>Section title</h2> -->
+    <div class="table-responsive">
+      <table class="table table-striped table-sm table-bordered">
+        <thead>
+          <tr>
+            <th>Tên cốc</th>
+            <th>Loại côc</th>
+            <th>Giá cốc</th>
+            <th>Khuyến mãi</th>
+            <th>Màu sắc</th>
+            <th>Kích cỡ</th>
+            <th>Dung tích</th>
+            <th>Chất liệu</th>
+            <th>Trạng thái</th>
+            <th>Ngày nhập</th>
+            <th>
+             Action
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr ng-repeat="coc in products">
+            <td>{{coc.name}}</td>
+            <td>{{coc.idCategory}}</td>
+            <td>{{coc.price | number:2}}</td>
+            <td>{{coc.promotion}}</td>
+            <td>{{coc.color}}</td>
+            <td>{{coc.size}}</td>
+            <td>{{coc.volume}}</td>
+            <td>{{coc.material}}</td>
+            <td>{{coc.status?'Còn Hàng':'Hết Hàng'}}</td>
+            <td>{{coc.createDate | date: 'dd/MM/yyyy'}}</td>
+            <td>
+              <a href="#!createDrinkingCups/{{coc.id}}" class="btn btn-sm btn-outline-secondary">Edit</a>
+            </td>
+          </tr>
+     
+        </tbody>
+      </table>
+    </div>
